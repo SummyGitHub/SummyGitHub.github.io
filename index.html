@@ -259,6 +259,175 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/04/my-new-post/" itemprop="url">
+                  正则表达式里的小九九
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-04T15:42:27+08:00" content="2016-11-04">
+              2016-11-04
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/04/my-new-post/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/04/my-new-post/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#正则表达式里的小九九#</p>
+<blockquote>
+<p>前奏：从上大学的时候接触的第一门编程语言，就学到了正则表达式，然而至今，每次看到正则表达式匹配都像在看达芬奇密码一样，一头雾水，搬代码时候需要实现什么语句匹配时，内心真的是内牛满面。</p>
+</blockquote>
+<p><strong>接着唠</strong>：google或者百度一下，发现网上正则表达式教程比比皆是，记录得很详细，但是每次看完，还是一脸懵逼，写得虽然详细，但是记不住啊，我特别不擅长于记忆一些零零碎碎的知识点，故，将学到的正则表达式语法归纳总结一下，也算是检验一下自己的学习成果，增强记忆。</p>
+<h2 id="正则表达式声明"><a href="#正则表达式声明" class="headerlink" title="正则表达式声明"></a>正则表达式声明</h2><ul>
+<li><p>正则表达式字面量 （推荐）</p>
+<p>  var reg = /exp/   /<em>在两个斜杠之间书写正则表达式字符</em>/</p>
+</li>
+</ul>
+<ul>
+<li><p>RegExp对象声明</p>
+<p>  var reg = new RegExp(exp,signal)</p>
+</li>
+</ul>
+<p>这两种方式都可以声明一个正则表达式，但是比较推荐字面量（所谓字面量就是字面上就能看出是表达式的一种形式）声明，这样可以兼容更多的浏览器版本，如果你用过ie8及以下版本，你就会发现使用RegExp声明变量会出现一些问题。</p>
+<h2 id="标识"><a href="#标识" class="headerlink" title="标识"></a>标识</h2><pre><code>g--global      全局匹配
+
+i--ignoreCase  忽略大小写
+
+m--multiline   多行匹配
+</code></pre><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><pre><code>^      匹配初始位置，表示正则表达式的开始
+
+$      匹配结束位置，表示正则表达式的结束
+
+.      匹配处了换行符之外的所以字符 
+
+\w     匹配数字，字母，下划线，汉字等
+
+\d     匹配数字
+
+\s     匹配任意空白字符
+
+\b     匹配单词开头或者结束
+</code></pre><h2 id="反义字符"><a href="#反义字符" class="headerlink" title="反义字符"></a>反义字符</h2><p>反义字符是基于元字符的基础上的，在正则表达式中，对于大小写是敏感的，大小写字符甚至代表着截然不同的两种情况。</p>
+<pre><code>\W     匹配任意**不是**数字，字母，下划线，汉字等的字符
+
+\D     匹配任意**不是**数字的字符
+
+\S     匹配任意**不是**空白字符的字符
+
+\B     匹配**不是**单词开头或者结束
+</code></pre><h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><p>上面的元字符与反义字符只能匹配单一的字符，例如，\d只能匹配1，无法匹配123，要想达到重复的效果，需要使用量词来控制匹配字符的数量。</p>
+<pre><code>*      匹配 &gt;=0次
+
++      匹配 &gt;=1次
+
+？     匹配 &lt;=1次
+
+{n}    匹配 =n次
+
+{n,m}  匹配 &gt;=n且&lt;=m次
+
+{n,}   匹配 &gt;=n次
+</code></pre><h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>正则表达式采用()（小括号）来表示分组情况，()之中的被划分为一组，分组会出现两种情况：<strong>非捕获分组</strong>和<strong>捕获分组</strong></p>
+<ol>
+<li><p>非捕获分组 (?:exp)</p>
+<p> 非捕获分组只能匹配文本，不会复制所匹配的文本存储到数组或其他地方，也不会将匹配文本放置到内置变量$1、$2..等中，即只能用于判断，无法用于其他操作</p>
+</li>
+<li><p>捕获分组 (exp)与(?<name>exp)</name></p>
+<p> (exp)将捕获后的文本复制到内部变量$1、$2…</p>
+<p> (?<name>exp)将捕获后的文本复制到自定义命名的组名name中</name></p>
+<p> 捕获组可以提取匹配到得到文本进行后面的操作，这对于提取例如url后面的参数非常有用</p>
+</li>
+</ol>
+<h2 id="拓展学习"><a href="#拓展学习" class="headerlink" title="拓展学习"></a>拓展学习</h2><p><a href="https://regexper.com" target="_blank" rel="external">正则表达式在线学习工具</a></p>
+<p><a href="http://tool.chinaz.com/regex/" target="_blank" rel="external">正则表达式在线测试工具</a></p>
+<p>JavaScript语言精粹第七章</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/04/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -388,7 +557,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
