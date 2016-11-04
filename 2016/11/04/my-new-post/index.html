@@ -98,7 +98,7 @@
 前奏：从上大学的时候接触的第一门编程语言，就学到了正则表达式，然而至今，每次看到正则表达式匹配都像在看达芬奇密码一样，一头雾水，搬代码时候需要实现什么语句匹配时，内心真的是内牛满面。
 
 接着唠：google或者百度一下，发现网上正则表达式教程比比皆是，记录得很详细，但是每次看完，还是一脸懵逼，写得虽然详细，但是记不住啊，我特别不擅长于记忆一些零零碎碎的知识点，故，将学到">
-<meta property="og:updated_time" content="2016-11-04T12:30:14.337Z">
+<meta property="og:updated_time" content="2016-11-04T12:51:42.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式里的小九九">
 <meta name="twitter:description" content="#正则表达式里的小九九#
@@ -341,7 +341,7 @@ m--multiline   多行匹配
 
 $      匹配结束位置，表示正则表达式的结束
 
-.      匹配处了换行符之外的所以字符 
+.      匹配除了换行符之外的所以字符 
 
 \w     匹配数字，字母，下划线，汉字等
 
@@ -370,7 +370,7 @@ $      匹配结束位置，表示正则表达式的结束
 {n,m}  匹配 &gt;=n且&lt;=m次
 
 {n,}   匹配 &gt;=n次
-</code></pre><h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
+</code></pre><h2 id="贪婪模式与懒惰模式"><a href="#贪婪模式与懒惰模式" class="headerlink" title="贪婪模式与懒惰模式"></a>贪婪模式与懒惰模式</h2><h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
 <h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>正则表达式采用()（小括号）来表示分组情况，()之中的被划分为一组，分组会出现两种情况：<strong>非捕获分组</strong>和<strong>捕获分组</strong></p>
 <ul>
 <li><p>非捕获分组 (?:exp)</p>
@@ -385,11 +385,14 @@ $      匹配结束位置，表示正则表达式的结束
 </li>
 </ul>
 <h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><ul>
-<li>test()</li>
+<li><p>test()</p>
+<p>  只是起到检测作用，若遇到匹配文本，则返回true，若整个字符串没有遇到匹配的文本，则返回false</p>
+</li>
 <li><p>match()</p>
 <p>  match()按顺序匹配，若匹配到文本，则会返回，不会接下去匹配后面的字符</p>
 </li>
-<li>search()</li>
+<li><p>search()</p>
+</li>
 <li>exec()</li>
 </ul>
 <h2 id="拓展学习"><a href="#拓展学习" class="headerlink" title="拓展学习"></a>拓展学习</h2><p><a href="https://regexper.com" target="_blank" rel="external">正则表达式在线学习工具</a></p>
@@ -530,7 +533,7 @@ $      匹配结束位置，表示正则表达式的结束
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识"><span class="nav-number">2.</span> <span class="nav-text">标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">3.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反义字符"><span class="nav-number">4.</span> <span class="nav-text">反义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">5.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#范围类"><span class="nav-number">6.</span> <span class="nav-text">范围类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">7.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作方法"><span class="nav-number">8.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展学习"><span class="nav-number">9.</span> <span class="nav-text">拓展学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识"><span class="nav-number">2.</span> <span class="nav-text">标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">3.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反义字符"><span class="nav-number">4.</span> <span class="nav-text">反义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">5.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贪婪模式与懒惰模式"><span class="nav-number">6.</span> <span class="nav-text">贪婪模式与懒惰模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#范围类"><span class="nav-number">7.</span> <span class="nav-text">范围类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">8.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作方法"><span class="nav-number">9.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展学习"><span class="nav-number">10.</span> <span class="nav-text">拓展学习</span></a></li></ol></div>
             
           </div>
         </section>

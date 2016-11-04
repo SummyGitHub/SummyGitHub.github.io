@@ -335,7 +335,7 @@ m--multiline   多行匹配
 
 $      匹配结束位置，表示正则表达式的结束
 
-.      匹配处了换行符之外的所以字符 
+.      匹配除了换行符之外的所以字符 
 
 \w     匹配数字，字母，下划线，汉字等
 
@@ -364,7 +364,7 @@ $      匹配结束位置，表示正则表达式的结束
 {n,m}  匹配 &gt;=n且&lt;=m次
 
 {n,}   匹配 &gt;=n次
-</code></pre><h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
+</code></pre><h2 id="贪婪模式与懒惰模式"><a href="#贪婪模式与懒惰模式" class="headerlink" title="贪婪模式与懒惰模式"></a>贪婪模式与懒惰模式</h2><h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
 <h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>正则表达式采用()（小括号）来表示分组情况，()之中的被划分为一组，分组会出现两种情况：<strong>非捕获分组</strong>和<strong>捕获分组</strong></p>
 <ul>
 <li><p>非捕获分组 (?:exp)</p>
@@ -379,11 +379,14 @@ $      匹配结束位置，表示正则表达式的结束
 </li>
 </ul>
 <h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><ul>
-<li>test()</li>
+<li><p>test()</p>
+<p>  只是起到检测作用，若遇到匹配文本，则返回true，若整个字符串没有遇到匹配的文本，则返回false</p>
+</li>
 <li><p>match()</p>
 <p>  match()按顺序匹配，若匹配到文本，则会返回，不会接下去匹配后面的字符</p>
 </li>
-<li>search()</li>
+<li><p>search()</p>
+</li>
 <li>exec()</li>
 </ul>
 <h2 id="拓展学习"><a href="#拓展学习" class="headerlink" title="拓展学习"></a>拓展学习</h2><p><a href="https://regexper.com" target="_blank" rel="external">正则表达式在线学习工具</a></p>
