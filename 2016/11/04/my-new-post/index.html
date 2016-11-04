@@ -98,7 +98,7 @@
 前奏：从上大学的时候接触的第一门编程语言，就学到了正则表达式，然而至今，每次看到正则表达式匹配都像在看达芬奇密码一样，一头雾水，搬代码时候需要实现什么语句匹配时，内心真的是内牛满面。
 
 接着唠：google或者百度一下，发现网上正则表达式教程比比皆是，记录得很详细，但是每次看完，还是一脸懵逼，写得虽然详细，但是记不住啊，我特别不擅长于记忆一些零零碎碎的知识点，故，将学到">
-<meta property="og:updated_time" content="2016-11-04T12:51:42.103Z">
+<meta property="og:updated_time" content="2016-11-04T13:01:34.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式里的小九九">
 <meta name="twitter:description" content="#正则表达式里的小九九#
@@ -358,7 +358,8 @@ $      匹配结束位置，表示正则表达式的结束
 \S     匹配任意不是空白字符的字符
 
 \B     匹配不是单词开头或者结束
-</code></pre><h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><p>上面的元字符与反义字符只能匹配单一的字符，例如，\d只能匹配1，无法匹配123，要想达到重复的效果，需要使用量词来控制匹配字符的数量。</p>
+</code></pre><h2 id="求反"><a href="#求反" class="headerlink" title="求反"></a>求反</h2><p>[^exp]这种情况下会匹配非exp的字符。</p>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><p>上面的元字符与反义字符只能匹配单一的字符，例如，\d只能匹配1，无法匹配123，要想达到重复的效果，需要使用量词来控制匹配字符的数量。</p>
 <pre><code>*      匹配 &gt;=0次
 
 +      匹配 &gt;=1次
@@ -533,7 +534,7 @@ $      匹配结束位置，表示正则表达式的结束
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识"><span class="nav-number">2.</span> <span class="nav-text">标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">3.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反义字符"><span class="nav-number">4.</span> <span class="nav-text">反义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">5.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贪婪模式与懒惰模式"><span class="nav-number">6.</span> <span class="nav-text">贪婪模式与懒惰模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#范围类"><span class="nav-number">7.</span> <span class="nav-text">范围类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">8.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作方法"><span class="nav-number">9.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展学习"><span class="nav-number">10.</span> <span class="nav-text">拓展学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识"><span class="nav-number">2.</span> <span class="nav-text">标识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">3.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反义字符"><span class="nav-number">4.</span> <span class="nav-text">反义字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求反"><span class="nav-number">5.</span> <span class="nav-text">求反</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#量词"><span class="nav-number">6.</span> <span class="nav-text">量词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贪婪模式与懒惰模式"><span class="nav-number">7.</span> <span class="nav-text">贪婪模式与懒惰模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#范围类"><span class="nav-number">8.</span> <span class="nav-text">范围类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">9.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作方法"><span class="nav-number">10.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展学习"><span class="nav-number">11.</span> <span class="nav-text">拓展学习</span></a></li></ol></div>
             
           </div>
         </section>
