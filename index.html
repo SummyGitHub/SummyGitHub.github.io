@@ -317,7 +317,7 @@
 <p><strong>接着唠</strong>：google或者百度一下，发现网上正则表达式教程比比皆是，记录得很详细，但是每次看完，还是一脸懵逼，写得虽然详细，但是记不住啊，我特别不擅长于记忆一些零零碎碎的知识点，故，将学到的正则表达式语法归纳总结一下，也算是检验一下自己的学习成果，增强记忆。</p>
 <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><ul>
 <li><p>正则表达式字面量 （推荐）</p>
-<p>  var reg = /exp/   /<em>在两个斜杠之间书写正则表达式字符</em>/</p>
+<p>  var reg = /exp/     //在两个斜杠之间书写正则表达式字符</p>
 </li>
 </ul>
 <ul>
@@ -381,14 +381,27 @@ $      匹配结束位置，表示正则表达式的结束
 </ul>
 <h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><ul>
 <li><p>test()</p>
-<p>  只是起到检测作用，若遇到匹配文本，则返回true，若整个字符串没有遇到匹配的文本，则返回false</p>
+<p>  属于RegExp对象的一个方法，即regexp.test(string)</p>
+<p>  返回值为：boolean类型的值，若匹配到文本，则返回true，反之，返回false</p>
 </li>
+</ul>
+<pre><code>-  只是起到检测作用，是正则表达式中最简单也是匹配速度最快的方法，这个方法不能是用g  （全局）标识
+
+- 如果regexp匹配到string后则会立即返回，且lastIndex值为匹配文本后的第一个字符的下标 
+    eg:  var reg = /^a/; reg.test(&apos;dgag&apos;)  返回true，teg.lastIndex = 3
+</code></pre><ul>
 <li><p>match()</p>
 <p>  match()按顺序匹配，若匹配到文本，则会返回，不会接下去匹配后面的字符</p>
 </li>
 <li><p>search()</p>
 </li>
-<li>exec()</li>
+<li><p>exec()</p>
+<p>  属于RegExp对象的一个方法，即regexp.exec(string)</p>
+<p>  返回值：若匹配到文本，则返回数组，反之，则返回一个null值</p>
+<pre><code>- 主要是根据捕获分组来存储每组匹配的文本，数组第一项存储的是整个正则表达式匹配的文本，第二项开始分别对应捕获组1、捕获组2...的匹配文本
+- 如果使用了g标识，则每次匹配后lastIndex属性不会重置到0，而是将其设置为该匹配后第一个字符的位置
+- ^因子仅匹配lastIndex为0的情况
+</code></pre></li>
 </ul>
 <h2 id="拓展学习"><a href="#拓展学习" class="headerlink" title="拓展学习"></a>拓展学习</h2><p><a href="https://regexper.com" target="_blank" rel="external">正则表达式在线学习工具</a></p>
 <p><a href="http://tool.chinaz.com/regex/" target="_blank" rel="external">正则表达式在线测试工具</a></p>
