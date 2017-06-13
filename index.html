@@ -259,6 +259,115 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/13/about-defineProperty/" itemprop="url">
+                  about-defineProperty
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-13T19:27:43+08:00" content="2017-06-13">
+              2017-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/13/about-defineProperty/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/13/about-defineProperty/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Object.defineProperty#</p>
+<blockquote>
+<p>前奏又一波：最近频繁遇到Object.defineProperty这个方法，百度一下，一般用于给对象添加新属性或者修改原有属性，Vue.js和avalon.js框架都使用这个方法实现数据双向绑定，所以学习一下这个方法。</p>
+<p>##定义##<br>火狐社区定义原文是这样子的。</p>
+</blockquote>
+<pre><code>This method allows precise addition to or modification of a property on an
+object. Normal property addition through assignment creates properties which
+show up during property enumeration (for...in loop or Object.keys method), 
+whose values may be changed, and which may be deleted. 
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/04/my-new-post/" itemprop="url">
                   正则表达式里的小九九
                 </a>
@@ -365,7 +474,8 @@ $      匹配结束位置，表示正则表达式的结束
 {n,m}  匹配 &gt;=n且&lt;=m次
 
 {n,}   匹配 &gt;=n次
-</code></pre><h2 id="贪婪模式与懒惰模式"><a href="#贪婪模式与懒惰模式" class="headerlink" title="贪婪模式与懒惰模式"></a>贪婪模式与懒惰模式</h2><h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
+</code></pre><h2 id="贪婪模式与懒惰模式"><a href="#贪婪模式与懒惰模式" class="headerlink" title="贪婪模式与懒惰模式"></a>贪婪模式与懒惰模式</h2><p>我们平时的正则表达式都是以默认为贪婪模式的，通俗点讲就是尽量多的匹配</p>
+<h2 id="范围类"><a href="#范围类" class="headerlink" title="范围类"></a>范围类</h2><p>正则表达式采用[]（中括号）来表示范围，如[a-z]表示匹配小写字母a~z中任何一个字符</p>
 <h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>正则表达式采用()（小括号）来表示分组情况，()之中的被划分为一组，分组会出现两种情况：<strong>非捕获分组</strong>和<strong>捕获分组</strong></p>
 <ul>
 <li><p>非捕获分组 (?:exp)</p>
@@ -385,7 +495,8 @@ $      匹配结束位置，表示正则表达式的结束
 <p>  返回值为：boolean类型的值，若匹配到文本，则返回true，反之，返回false</p>
 </li>
 </ul>
-<pre><code>-  只是起到检测作用，是正则表达式中最简单也是匹配速度最快的方法，这个方法不能是用g  （全局）标识
+<pre><code>-  只是起到检测作用，是正则表达式中最简单也是匹配速度最快的方法，这个方法不能是用g  
+- （全局）标识
 
 - 如果regexp匹配到string后则会立即返回，且lastIndex值为匹配文本后的第一个字符的下标 
     eg:  var reg = /^a/; reg.test(&apos;dgag&apos;)  返回true，teg.lastIndex = 3
@@ -584,7 +695,7 @@ $      匹配结束位置，表示正则表达式的结束
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -624,7 +735,7 @@ $      匹配结束位置，表示正则表达式的结束
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
