@@ -314,7 +314,7 @@
 <p>作为一个（wei）前端工作者，一定一定要多多看看基础，因为这可能决定了你是不是会花几个小时甚至几天去改一个基础到无法再基础的bug，最近工作内容以重构为主，悲催的发现自己这实现速度简直是逆了天的慢，默默回头复习（xue xi）一下基础知识。</p>
 </blockquote>
 <p>CSS是页面重构中不可或缺的部分，其中最重要的三个概念就是浮动，定位和盒模型，以下则是来了解CSS中盒模型中的一个重要属性：margin属性。</p>
-<h2 id="1、CSS盒模型"><a href="#1、CSS盒模型" class="headerlink" title="1、CSS盒模型"></a>1、CSS盒模型</h2><p>CSS中有两种盒模型：<strong>IE盒模型</strong>和<strong>标准盒模型</strong>，IE6及以下版本浏览器在混合模式下会使用IE盒模型，普遍浏览器则是使用标准盒模型。这两者的区别如下：<br><img src="http://i.imgur.com/H52GDhf.jpg" alt=""><br><img src="http://i.imgur.com/OmBaAkG.jpg" alt=""></p>
+<h2 id="1、CSS盒模型"><a href="#1、CSS盒模型" class="headerlink" title="1、CSS盒模型"></a>1、CSS盒模型</h2><p>CSS中有两种盒模型：<strong>IE盒模型</strong>和<strong>标准盒模型</strong>，IE6及以下版本浏览器在混合模式下会使用IE盒模型，普遍浏览器则是使用标准盒模型。这两者的区别如下(PS:这两张图是顺来的，一直很喜欢这两张图，感谢前人提供的便捷，hhh~)：<br><img src="http://i.imgur.com/H52GDhf.jpg" alt=""><br><img src="http://i.imgur.com/OmBaAkG.jpg" alt=""></p>
 <p>这两种盒子模型区别就在于CSS中width属性的范围，标准盒子模型，width设置的是盒子内内容的宽度；IE盒子模型的width属性范围则是盒子内内容+内边距+外边框的宽度。</p>
 <h2 id="2、可视区域"><a href="#2、可视区域" class="headerlink" title="2、可视区域"></a>2、可视区域</h2><p>这里我们要引入一个“可视区域”的概念，这里所指的“可视区域”是指盒子在页面中能让我们肉眼看得见的（可以理解为background-color中能影响到的区域）。</p>
 <p>margin范围为透明的，虽然我们无法直接在视觉上将其辨别出来，但它确实真实存在且在文档中有相应的占据尺寸。我们平时使用margin值设置上下左右就是通过其来设置盒子的可用模型。</p>
