@@ -98,7 +98,7 @@ The Object.defineProperty() method defin">
 
 定义MDN上的定义是这样子的。
 The Object.defineProperty() method defin">
-<meta property="og:updated_time" content="2017-09-27T02:37:38.336Z">
+<meta property="og:updated_time" content="2017-09-27T02:45:38.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object.defineProperty">
 <meta name="twitter:description" content="Object.defineProperty
@@ -382,8 +382,10 @@ console.log(myObject.a);  //11
 
 场景： 为myObject添加c属性
 
- 1. 如果[[prototype]]链上层存在c属性，但其被标记为只读（writeable:true），那么myObject无法为自身添加c属性或者是修改原有的c属性。
- 2. 如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。
+
+
+- 如果[[prototype]]链上层存在c属性，但其被标记为只读（writeable:true），那么myObject无法为自身添加c属性或者是修改原有的c属性。
+- 如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。
 
 上面两种情况的解决办法便是使用**Object.defineProperty()**
 </code></pre><ol>

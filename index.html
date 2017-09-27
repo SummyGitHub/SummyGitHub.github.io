@@ -484,8 +484,10 @@ console.log(myObject.a);  //11
 
 场景： 为myObject添加c属性
 
- 1. 如果[[prototype]]链上层存在c属性，但其被标记为只读（writeable:true），那么myObject无法为自身添加c属性或者是修改原有的c属性。
- 2. 如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。
+
+
+- 如果[[prototype]]链上层存在c属性，但其被标记为只读（writeable:true），那么myObject无法为自身添加c属性或者是修改原有的c属性。
+- 如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。
 
 上面两种情况的解决办法便是使用**Object.defineProperty()**
 </code></pre><ol>
