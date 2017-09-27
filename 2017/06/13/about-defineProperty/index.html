@@ -98,7 +98,7 @@ The Object.defineProperty() method defin">
 
 定义MDN上的定义是这样子的。
 The Object.defineProperty() method defin">
-<meta property="og:updated_time" content="2017-09-27T02:28:53.272Z">
+<meta property="og:updated_time" content="2017-09-27T02:37:38.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object.defineProperty">
 <meta name="twitter:description" content="Object.defineProperty
@@ -378,14 +378,15 @@ myObject.a = 11;   //这里发生了属性屏蔽，myObject添加了属于自己
 console.log(myObject.a);  //11  
 </code></pre></li>
 </ol>
-<p>   然而并非是任何的添加相同的属性名都会发生属性屏蔽的现象，可以说发生属性屏蔽的场景是有限制。 上一个例子中，myObject.a = 11赋值操作能够顺利添加到myObject上，是由于在[[prototype]]链上（这里指anthorObject)的a属性只是一个普通数据访问属性。下面的这两种情况，将不会发生属性屏蔽现象。</p>
-<p>   场景： 为myObject添加c属性</p>
-<ol>
-<li>如果[[prototype]]链上层存在c属性，但其被标记为只读（writeable:true），那么myObject无法为自身添加c属性或者是修改原有的c属性。</li>
-<li>如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。</li>
-</ol>
-<p>上面两种情况的解决办法便是使用<strong>Object.defineProperty()</strong></p>
-<ol>
+<pre><code>然而并非是任何的添加相同的属性名都会发生属性屏蔽的现象，可以说发生属性屏蔽的场景是有限制。 上一个例子中，myObject.a = 11赋值操作能够顺利添加到myObject上，是由于在[[prototype]]链上（这里指anthorObject)的a属性只是一个普通数据访问属性。下面的这两种情况，将不会发生属性屏蔽现象。
+
+场景： 为myObject添加c属性
+
+ 1. 如果[[prototype]]链上层存在c属性，但其被标记为只读（writeable:true），那么myObject无法为自身添加c属性或者是修改原有的c属性。
+ 2. 如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。
+
+上面两种情况的解决办法便是使用**Object.defineProperty()**
+</code></pre><ol>
 <li><p>能够保护一个变量，使其具有私有变量的安全性。当定义一个与函数内部变量同名的函数的属性，外部环境将无法访问到函数内的这个变量。如下代码说明：</p>
 <pre><code>function Animal () {
     var name = &quot;&quot;;
