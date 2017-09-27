@@ -464,6 +464,27 @@ console.log(Object.keys(obj));
 }
 </code></pre><p>经过多番查找，以及尝试，发掘Object.defineProperty方法的几个<strong>优势</strong>如下：</p>
 <ol>
+<li><p>能够保护一个变量，使其具有私有变量的安全性。当定义一个与函数内部变量同名的函数的属性，外部环境将无法访问到函数内的这个变量。如下代码说明：</p>
+<pre><code>function Animal () {
+    var name = &quot;&quot;;
+
+    Object.defineProperty(this, &apos;name&apos;, {
+        get : function() {
+            return name;
+        },
+        set : function(value) {
+            name = value;
+        }
+    });
+}
+var dog = new Animal();
+console.log(dog.name);
+dog.name = &apos;dog&apos;; //设置的是属性name的值而不是变量name的值
+console.log(dog.name);
+</code></pre></li>
+<li><p>能够设置默认不可更改变量。writable属性能够设置让外界无法更改内部变量的值。这个的好处就是使属性私有化，保护重要的属性不被修改。</p>
+</li>
+<li>getter和setter访问器。Object.defineProperty将属性进行包装。这也是前端用于实现数据绑定的重要原理。Vue.js的数据绑定就是基于此实现的。</li>
 <li><p>在原型链屏蔽属性。我们了解在原型链上，相同的属性可能发生属性屏蔽，具体关系如下：</p>
 <pre><code>var anotherObject = {
     name: &apos;anotherObject&apos;,
@@ -490,30 +511,7 @@ console.log(myObject.a);  //11
 - 如果[[prototype]]链上层存在c属性，且其为一个setter，那么myObject.c将会调用这个setter，不会在myObject自身添加或修改c属性。
 
 上面两种情况的解决办法便是使用**Object.defineProperty()**
-</code></pre><ol>
-<li><p>能够保护一个变量，使其具有私有变量的安全性。当定义一个与函数内部变量同名的函数的属性，外部环境将无法访问到函数内的这个变量。如下代码说明：</p>
-<pre><code>function Animal () {
-    var name = &quot;&quot;;
-
-    Object.defineProperty(this, &apos;name&apos;, {
-        get : function() {
-            return name;
-        },
-        set : function(value) {
-            name = value;
-        }
-    });
-}
-var dog = new Animal();
-console.log(dog.name);
-dog.name = &apos;dog&apos;; //设置的是属性name的值而不是变量name的值
-console.log(dog.name);
-</code></pre></li>
-<li><p>能够设置默认不可更改变量。writable属性能够设置让外界无法更改内部变量的值。这个的好处就是使属性私有化，保护重要的属性不被修改。</p>
-</li>
-<li>getter和setter访问器。Object.defineProperty将属性进行包装。这也是前端用于实现数据绑定的重要原理。Vue.js的数据绑定就是基于此实现的。</li>
-</ol>
-
+</code></pre>
           
         
       
